@@ -1,0 +1,295 @@
+<!-- これコピペして使う -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム</title>
+    <link rel="stylesheet" href="index.css"><!--共通レイアウト-->
+    <script src="index.js"></script><!--科目情報層の機能-->
+    <script src="index2.js"></script><!--機能-->
+</head>
+<body>
+    <div class="layer1">
+        <input class="layer1-input" id="class-day" readonly>
+        <input class="layer1-input" id="subject-name" readonly>
+        <select class="layer1-select" id="class-schedule">
+            <option>3時限目</option>
+            <option>4時限目</option>
+        </select>
+        
+        <div class="mode-box">
+            <!--出欠席モードのランプ -->
+            <div class="mode1-box">
+                <div class="lamp-box">
+                    <span class="lamp-status">出欠確認中</span>
+                    <span class="lamp" id="confirm-now-lamp"></span>
+                </div>
+                <div class="lamp-box">
+                    <span class="lamp-status">授業中</span>
+                    <span class="lamp" id="class-now-lamp"></span>
+                </div>
+            </div>
+    
+            <!-- 授業モードの切り替えトグル -->
+            <div class="mode2-box">
+                <span class="toggle-name">離席管理</span>
+                <div class="toggle_switch">
+                    <input type="checkbox" id="cb_toggle_switch">
+                    <label for="cb_toggle_switch"></label>
+                </div>
+            </div>
+        </div>
+
+        <span class="reset-button" id="reset-button">リセット</span>
+
+    </div>
+    <div class="layer2">
+        <div class="empty-row1"></div> <!--空白行-->
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23111</span>
+            <span class="student-seat" id="student-seat">BQ23112</span>
+            <span class="student-seat" id="student-seat"></span>
+            <span class="student-seat" id="student-seat">BQ24921</span>
+            <span class="piller-seat">柱</span>
+            <span class="ng-seat">使用不可</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="piller-seat">柱</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+        </div>
+        <div class="empty-row1"></div> <!--空白行-->
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23095</span>
+            <span class="student-seat" id="student-seat">BQ23096</span>
+            <span class="student-seat" id="student-seat">BQ23098</span>
+            <span class="student-seat" id="student-seat">BQ23099</span>
+            <span class="student-seat" id="student-seat">BQ23101</span>
+            <span class="student-seat" id="student-seat">BQ23102</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23104</span>
+            <span class="student-seat" id="student-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23106</span>
+            <span class="student-seat" id="student-seat">BQ23107</span>
+            <span class="student-seat" id="student-seat">BQ23108</span>
+            <span class="student-seat" id="student-seat">BQ23109</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23080</span>
+            <span class="student-seat" id="student-seat">BQ23081</span>
+            <span class="student-seat" id="student-seat">BQ23083</span>
+            <span class="student-seat" id="student-seat">BQ23084</span>
+            <span class="student-seat" id="student-seat">BQ23086</span>
+            <span class="student-seat" id="student-seat">BQ23087</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23089</span>
+            <span class="student-seat" id="student-seat">BQ23090</span>
+            <span class="student-seat" id="student-seat">BQ23091</span>
+            <span class="student-seat" id="student-seat">BQ23092</span>
+            <span class="student-seat" id="student-seat">BQ23093</span>
+            <span class="student-seat" id="student-seat">BQ23094</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23067</span>
+            <span class="student-seat" id="student-seat">BQ23069</span>
+            <span class="student-seat" id="student-seat">BQ23070</span>
+            <span class="student-seat" id="student-seat">BQ23071</span>
+            <span class="student-seat" id="student-seat">BQ23072</span>
+            <span class="student-seat" id="student-seat">BQ23073</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23074</span>
+            <span class="student-seat" id="student-seat">BQ23075</span>
+            <span class="student-seat" id="student-seat">BQ23076</span>
+            <span class="student-seat" id="student-seat">BQ23077</span>
+            <span class="student-seat" id="student-seat">BQ23078</span>
+            <span class="student-seat" id="student-seat">BQ23079</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23055</span>
+            <span class="student-seat" id="student-seat">BQ23057</span>
+            <span class="student-seat" id="student-seat">BQ23058</span>
+            <span class="student-seat" id="student-seat">BQ23059</span>
+            <span class="ng-seat">使用不可</span>
+            <span class="piller-seat">柱</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="piller-seat">柱</span>
+            <span class="student-seat" id="student-seat">BQ23060</span>
+            <span class="student-seat" id="student-seat">BQ23061</span>
+            <span class="student-seat" id="student-seat">BQ23062</span>
+            <span class="student-seat" id="student-seat">BQ23063</span>
+            <span class="student-seat" id="student-seat">BQ23066</span>
+        </div>
+        <div class="empty-row1"></div> <!--空白行-->
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23040</span>
+            <span class="student-seat" id="student-seat">BQ23041</span>
+            <span class="student-seat" id="student-seat">BQ23043</span>
+            <span class="student-seat" id="student-seat">BQ23044</span>
+            <span class="student-seat" id="student-seat">BQ23046</span>
+            <span class="student-seat" id="student-seat">BQ23047</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23048</span>
+            <span class="student-seat" id="student-seat">BQ23049</span>
+            <span class="student-seat" id="student-seat">BQ23051</span>
+            <span class="student-seat" id="student-seat">BQ23052</span>
+            <span class="student-seat" id="student-seat">BQ23053</span>
+            <span class="student-seat" id="student-seat">BQ23054</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23028</span>
+            <span class="student-seat" id="student-seat">BQ23029</span>
+            <span class="student-seat" id="student-seat">BQ23030</span>
+            <span class="student-seat" id="student-seat">BQ23031</span>
+            <span class="student-seat" id="student-seat">BQ23032</span>
+            <span class="student-seat" id="student-seat">BQ23033</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23034</span>
+            <span class="student-seat" id="student-seat">BQ23035</span>
+            <span class="student-seat" id="student-seat">BQ23036</span>
+            <span class="student-seat" id="student-seat">BQ23037</span>
+            <span class="student-seat" id="student-seat">BQ23038</span>
+            <span class="student-seat" id="student-seat">BQ23039</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23014</span>
+            <span class="student-seat" id="student-seat">BQ23015</span>
+            <span class="student-seat" id="student-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23017</span>
+            <span class="student-seat" id="student-seat">BQ23018</span>
+            <span class="student-seat" id="student-seat">BQ23020</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23021</span>
+            <span class="student-seat" id="student-seat">BQ23023</span>
+            <span class="student-seat" id="student-seat">BQ23024</span>
+            <span class="student-seat" id="student-seat">BQ23025</span>
+            <span class="student-seat" id="student-seat">BQ23026</span>
+            <span class="student-seat" id="student-seat">BQ23027</span>
+        </div>
+        <div class="row1">
+            <span class="ng-seat">使用不可</span>
+            <span class="student-seat" id="student-seat">BQ23001</span>
+            <span class="student-seat" id="student-seat">BQ23002</span>
+            <span class="student-seat" id="student-seat">BQ23003</span>
+            <span class="student-seat" id="student-seat">BQ23004</span>
+            <span class="piller-seat">柱</span>
+            <span class="ng-seat">使用不可</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="piller-seat">柱</span>
+            <span class="student-seat" id="student-seat">BQ23007</span>
+            <span class="student-seat" id="student-seat">BQ23010</span>
+            <span class="student-seat" id="student-seat">BQ23011</span>
+            <span class="student-seat" id="student-seat">BQ23012</span>
+            <span class="student-seat" id="student-seat">BQ23013</span>
+        </div>
+        <div class="empty-row1"></div> <!--空白行-->
+        <div class="row1">
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="student-seat" id="student-seat">BQ23016</span>
+            <span class="student-seat" id="student-seat">BQ23105</span>
+            <span class="student-seat" id="student-seat">BQ23114</span>
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">0</span>
+        </div>
+        <div class="row1">
+            <span class="student-seat" id="student-seat">0</span>
+            <span class="student-seat" id="student-seat">BQ22072</span>
+            <span class="student-seat" id="student-seat">BQ22057</span>
+            <span class="student-seat" id="student-seat">BQ22038</span>
+            <span class="student-seat" id="student-seat">BQ22029</span>
+            <span class="student-seat" id="student-seat">BQ22028</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>       
+            <span class="empty-seat" id="empty-seat"></span>
+        </div>
+        <div class="row1">
+            <span class="student-seat" id="student-seat">BQ21024</span>
+            <span class="student-seat" id="student-seat">BQ21046</span>
+            <span class="student-seat" id="student-seat"></span>
+            <span class="student-seat" id="student-seat">BQ22015</span>
+            <span class="student-seat" id="student-seat">BQ22024</span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+            <span class="empty-seat" id="empty-seat"></span>
+        </div>
+    </div>
+</body>
+</html>
